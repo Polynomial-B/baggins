@@ -1,14 +1,27 @@
+import { initialItems } from "../lib/constants";
+
+type ItemProps = {
+	item: string;
+	packed: boolean;
+};
+
 export default function ItemList() {
 	return (
 		<ul>
-			<Item item="Item" />
-			<Item item="Item" />
-			<Item item="Item" />
+			{initialItems.map((item) => {
+				return (
+					<Item
+						key={item.id}
+						item={item.item}
+						packed={item.packed}
+					></Item>
+				);
+			})}
 		</ul>
 	);
 }
 
-function Item({ item }: { item: string }): React.JSX.Element {
+function Item({ item }: ItemProps): React.JSX.Element {
 	return (
 		<li className="item">
 			<label>
