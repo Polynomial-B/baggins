@@ -1,12 +1,19 @@
 import BackgroundHeader from "./components/BackgroundHeader";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
+import ItemList from "./components/ItemList";
+import Sidebar from "./components/Sidebar";
 import "./index.css";
 
 function App() {
 	return (
 		<>
 			<BackgroundHeader />
-			<main></main>
+			<main>
+				<Header />
+				<ItemList />
+				<Sidebar />
+			</main>
 			<Footer />
 		</>
 	);
