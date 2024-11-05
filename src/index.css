@@ -215,7 +215,7 @@ form > input::placeholder {
 	font-style: italic;
 }
 
-.btn {
+.button {
 	height: 45px;
 	width: 100%;
 	border: none;
@@ -230,11 +230,11 @@ form > input::placeholder {
 	transition: all 0.2s;
 }
 
-.btn:hover {
+.button:hover {
 	background-color: #322618;
 }
 
-.btn--secondary {
+.button--secondary {
 	opacity: 0.85;
 	font-size: 14px;
 }
