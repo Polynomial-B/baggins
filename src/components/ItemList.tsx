@@ -1,14 +1,9 @@
-import { initialItems } from "../lib/constants";
+import { InitialItems, ItemListProps } from "../lib/types";
 
-type ItemProps = {
-	item: string;
-	packed: boolean;
-};
-
-export default function ItemList() {
+export default function ItemList({ initialItems }: ItemListProps) {
 	return (
 		<ul>
-			{initialItems.map((item) => {
+			{initialItems.map((item: InitialItems) => {
 				return (
 					<Item
 						key={item.id}
@@ -21,13 +16,14 @@ export default function ItemList() {
 	);
 }
 
-function Item({ item }: ItemProps): React.JSX.Element {
+function Item({ item }: InitialItems): React.JSX.Element {
 	return (
 		<li className="item">
 			<label>
 				<input type="checkbox"></input>
 				{item}
 			</label>
+			<button>❌</button>
 		</li>
 	);
 }
