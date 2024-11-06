@@ -1,4 +1,6 @@
-export const initialItems = [
+import { InitialItems } from "./types";
+
+export const initialItems: InitialItems[] = [
   {
     id: 1,
     item: "A sense of adventure",
@@ -16,7 +18,7 @@ export const initialItems = [
   },
 ];
 
-export const secondaryButtons = [
+export const secondaryButtons: string[] = [
   "Mark all completed",
   "Mark all incompleted",
   "Revert to initial items",
