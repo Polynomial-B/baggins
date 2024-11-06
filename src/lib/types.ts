@@ -5,7 +5,7 @@ export type InitialItems = {
 };
 
 export type ItemListProps = {
-  items: InitialItems[];
+  initialItems: InitialItems[];
 };
 
 export type ItemProps = {
