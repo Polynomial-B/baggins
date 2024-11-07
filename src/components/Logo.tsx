@@ -2,7 +2,7 @@ export default function Logo() {
 	return (
 		<img
 			src="/the-ring.webp"
-			alt="hobbit house with circular door and rounded roof"
+			alt="a gold ring with markings"
 			style={{ width: "44px" }}
 		/>
 	);
