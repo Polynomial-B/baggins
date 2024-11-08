@@ -1,14 +1,16 @@
-export type InitialItems = {
+import { Dispatch, SetStateAction } from "react";
+
+export type ItemsType = {
   id?: number;
   item: string;
-  packed: boolean;
+  packed?: boolean;
 };
 
 export type ItemListProps = {
-  initialItems: InitialItems[];
+  items: ItemsType[];
 };
 
-export type ItemProps = {
-  item: string;
-  setItem: (value: string) => void;
+export type SidebarProps = {
+  itemText: string;
+  setItemText: Dispatch<SetStateAction<ItemsType[]>>;
 };
