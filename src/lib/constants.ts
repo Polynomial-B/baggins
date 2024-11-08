@@ -1,6 +1,6 @@
-import { InitialItems } from "./types";
+import { ItemsType } from "./types";
 
-export const initialItems: InitialItems[] = [
+export const initialItems: ItemsType[] = [
   {
     id: 1,
     item: "A sense of adventure",
