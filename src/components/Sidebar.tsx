@@ -1,11 +1,14 @@
 import AddItemForm from "./AddItemForm";
 import ButtonGroup from "./ButtonGroup";
-import { ItemProps } from "../lib/types";
+import { SidebarProps } from "../lib/types";
 
-export default function Sidebar({ item, setItem }: ItemProps) {
+export default function Sidebar({
+	itemText,
+	setItemText,
+}: SidebarProps): React.JSX.Element {
 	return (
 		<div className="sidebar">
-			<AddItemForm item={item} setItem={setItem} />
+			<AddItemForm itemText={itemText} setItemText={setItemText} />
 			<ButtonGroup />
 		</div>
 	);

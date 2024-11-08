@@ -1,9 +1,11 @@
-import { InitialItems, ItemListProps } from "../lib/types";
+import { ItemsType } from "../lib/types";
 
-export default function ItemList({ initialItems }: ItemListProps) {
+export default function ItemList({
+	initialItems,
+}: ItemsType): React.JSX.Element {
 	return (
 		<ul>
-			{initialItems.map((item: InitialItems) => {
+			{initialItems.map((item) => {
 				return (
 					<Item
 						key={item.id}
@@ -16,7 +18,7 @@ export default function ItemList({ initialItems }: ItemListProps) {
 	);
 }
 
-function Item({ item }: InitialItems): React.JSX.Element {
+function Item({ item }: ItemsType): React.JSX.Element {
 	return (
 		<li className="item">
 			<label>
