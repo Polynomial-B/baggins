@@ -1,20 +1,21 @@
 import Button from "./Button";
-import { ItemProps } from "../lib/types";
+import { SidebarProps } from "../lib/types";
 
-export default function AddItemForm({ item, setItem }: ItemProps) {
+export default function AddItemForm({ itemText, setItemText }: SidebarProps) {
 	return (
 		<form
 			onSubmit={(e) => {
 				e.preventDefault();
-				console.log(item);
+				console.log(itemText);
 			}}
 		>
 			<h2>Add an item:</h2>
 			<input
-				type="item"
-				value={item}
+				type="text"
+				value={""}
 				onChange={(e) => {
-					setItem(e.target.value);
+					// setItemText(e.target.value);
+					console.log(e.target.value);
 				}}
 			/>
 			<Button>Add Item</Button>
