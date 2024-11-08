@@ -6,16 +6,20 @@ export default function AddItemForm({ itemText, setItemText }: SidebarProps) {
 		<form
 			onSubmit={(e) => {
 				e.preventDefault();
-				console.log(itemText);
+				const newItem = {
+					id: Date.now(),
+					name: itemText,
+					packed: false,
+				};
+				console.log(newItem);
 			}}
 		>
 			<h2>Add an item:</h2>
 			<input
 				type="text"
-				value={""}
+				value={itemText}
 				onChange={(e) => {
-					// setItemText(e.target.value);
-					console.log(e.target.value);
+					setItemText(e.target.value);
 				}}
 			/>
 			<Button>Add Item</Button>

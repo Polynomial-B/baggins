@@ -8,14 +8,14 @@ import { initialItems } from "./lib/constants";
 import "./index.css";
 
 function App() {
-	const [itemText, setItemText] = useState(initialItems);
+	const [items, setItems] = useState(initialItems);
 	return (
 		<>
 			<BackgroundHeader />
 			<main>
 				<Header />
-				<ItemList initialItems={initialItems} />
-				<Sidebar itemText={itemText} setItemText={setItemText} />
+				<ItemList items={items} />
+				<Sidebar items={items} setItemText={setItems} />
 			</main>
 			<Footer />
 		</>
