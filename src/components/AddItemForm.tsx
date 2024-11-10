@@ -8,6 +8,9 @@ export default function AddItemForm({ items, setItems }: SidebarProps) {
 		<form
 			onSubmit={(e) => {
 				e.preventDefault();
+				if (!itemText) {
+					return;
+				}
 				const newItem: ItemsType = {
 					id: Date.now(),
 					item: itemText,
