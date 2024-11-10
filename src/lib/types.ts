@@ -11,6 +11,8 @@ export type ItemListProps = {
 };
 
 export type SidebarProps = {
-  item: string;
-  setItem: Dispatch<SetStateAction<ItemsType[]>>;
+  items: ItemsType[] | ItemsType;
+  setItems:
+    | Dispatch<SetStateAction<ItemsType[]>>
+    | Dispatch<SetStateAction<ItemsType>>;
 };
