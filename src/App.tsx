@@ -9,13 +9,14 @@ import "./index.css";
 
 function App() {
 	const [items, setItems] = useState(initialItems);
+
 	return (
 		<>
 			<BackgroundHeader />
 			<main>
 				<Header />
 				<ItemList items={items} />
-				<Sidebar items={items} setItemText={setItems} />
+				<Sidebar items={items} setItems={setItems} />
 			</main>
 			<Footer />
 		</>
