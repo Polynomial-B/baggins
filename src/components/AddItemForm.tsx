@@ -1,17 +1,19 @@
 import Button from "./Button";
-import { SidebarProps } from "../lib/types";
+import { ItemsType, SidebarProps } from "../lib/types";
+import { useState } from "react";
 
-export default function AddItemForm({ itemText, setItemText }: SidebarProps) {
+export default function AddItemForm({ items, setItems }: SidebarProps) {
+	const [itemText, setItemText] = useState("");
 	return (
 		<form
 			onSubmit={(e) => {
 				e.preventDefault();
-				const newItem = {
+				const newItem: ItemsType = {
 					id: Date.now(),
-					name: itemText,
+					item: itemText,
 					packed: false,
 				};
-				console.log(newItem);
+				setItems((prev) => [...prev, newItem]);
 			}}
 		>
 			<h2>Add an item:</h2>
