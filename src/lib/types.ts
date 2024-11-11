@@ -1,5 +1,3 @@
-import { Dispatch, SetStateAction } from "react";
-
 export type ItemsType = {
   id?: number;
   item: string;
@@ -11,8 +9,5 @@ export type ItemListProps = {
 };
 
 export type SidebarProps = {
-  items: ItemsType[] | ItemsType;
-  setItems:
-    | Dispatch<SetStateAction<ItemsType[]>>
-    | Dispatch<SetStateAction<ItemsType>>;
+  handleAddItem: (newItem: ItemsType) => void;
 };
