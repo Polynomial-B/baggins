@@ -9,5 +9,5 @@ export type ItemListProps = {
 };
 
 export type SidebarProps = {
-  handleAddItem: (newItem: ItemsType) => void;
+  handleAddItem: (newItemText: string) => void;
 };

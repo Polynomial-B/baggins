@@ -10,7 +10,12 @@ import { ItemsType } from "./lib/types";
 
 function App() {
 	const [items, setItems] = useState(initialItems);
-	const handleAddItem = (newItem: ItemsType): void => {
+	const handleAddItem = (newItemText: string): void => {
+		const newItem: ItemsType = {
+			id: Date.now(),
+			item: newItemText,
+			packed: false,
+		};
 		const newItems = [...items, newItem];
 		setItems(newItems);
 	};
