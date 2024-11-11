@@ -3,12 +3,11 @@ import ButtonGroup from "./ButtonGroup";
 import { SidebarProps } from "../lib/types";
 
 export default function Sidebar({
-	items,
-	setItems,
+	handleAddItem,
 }: SidebarProps): React.JSX.Element {
 	return (
 		<div className="sidebar">
-			<AddItemForm items={items} setItems={setItems} />
+			<AddItemForm handleAddItem={handleAddItem} />
 			<ButtonGroup />
 		</div>
 	);

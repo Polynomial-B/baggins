@@ -2,7 +2,7 @@ import Button from "./Button";
 import { ItemsType, SidebarProps } from "../lib/types";
 import { useRef, useState } from "react";
 
-export default function AddItemForm({ items, setItems }: SidebarProps) {
+export default function AddItemForm({ handleAddItem }: SidebarProps) {
 	const [itemText, setItemText] = useState("");
 	const inputRef = useRef<HTMLInputElement>(null);
 
@@ -16,7 +16,7 @@ export default function AddItemForm({ items, setItems }: SidebarProps) {
 			item: itemText,
 			packed: false,
 		};
-		setItems((prev: ItemsType) => [...prev, newItem]);
+		handleAddItem(newItem);
 		setItemText("");
 		if (inputRef.current) {
 			inputRef.current.focus();

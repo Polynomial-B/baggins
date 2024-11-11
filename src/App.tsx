@@ -6,17 +6,21 @@ import ItemList from "./components/ItemList";
 import Sidebar from "./components/Sidebar";
 import { initialItems } from "./lib/constants";
 import "./index.css";
+import { ItemsType } from "./lib/types";
 
 function App() {
 	const [items, setItems] = useState(initialItems);
-
+	const handleAddItem = (newItem: ItemsType): void => {
+		const newItems = [...items, newItem];
+		setItems(newItems);
+	};
 	return (
 		<>
 			<BackgroundHeader />
 			<main>
 				<Header />
 				<ItemList items={items} />
-				<Sidebar items={items} setItems={setItems} />
+				<Sidebar handleAddItem={handleAddItem} />
 			</main>
 			<Footer />
 		</>
