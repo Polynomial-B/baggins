@@ -3,17 +3,17 @@ import { ItemsType } from "./types";
 export const initialItems: ItemsType[] = [
   {
     id: 1,
-    item: "A sense of adventure",
-    packed: true,
-  },
-  {
-    id: 2,
     item: "A gold ring",
     packed: false,
   },
   {
+    id: 2,
+    item: "Potatoes",
+    packed: true,
+  },
+  {
     id: 3,
-    item: "Lembas bread",
+    item: "A woolen blanket",
     packed: false,
   },
 ];
