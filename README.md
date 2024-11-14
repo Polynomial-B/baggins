@@ -11,6 +11,8 @@ To create an app that allows a user to create and update a list, in order to aid
 - Zustand
 - React
 - React-Select
+- HTML
+- CSS
 
 #### Development Tools
 
