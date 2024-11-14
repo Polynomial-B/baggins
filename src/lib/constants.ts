@@ -13,14 +13,7 @@ export const initialItems: ItemsType[] = [
   },
   {
     id: 3,
-    item: "A woolen blanket",
+    item: "A woollen blanket",
     packed: false,
   },
-];
-
-export const secondaryButtons: string[] = [
-  "Mark all completed",
-  "Mark all incompleted",
-  "Revert to initial items",
-  "Remove all items",
 ];

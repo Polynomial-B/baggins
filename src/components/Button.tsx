@@ -1,14 +1,15 @@
+import { ButtonProps } from "../lib/types";
+
 export default function Button({
 	children,
-	type,
-}: {
-	children: React.ReactNode;
-	type?: string;
-}): React.JSX.Element {
+	buttonStyle,
+	onClick,
+}: ButtonProps): React.JSX.Element {
 	return (
 		<button
+			onClick={onClick}
 			className={`button ${
-				type === "secondary" ? "button--secondary" : ""
+				buttonStyle === "secondary" ? "button--secondary" : ""
 			}`}
 		>
 			{children}

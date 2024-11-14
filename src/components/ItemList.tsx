@@ -12,11 +12,11 @@ export default function ItemList({ items }: ItemListProps): React.JSX.Element {
 	);
 }
 
-function Item({ item }: ItemsType): React.JSX.Element {
+function Item({ item, packed }: ItemsType): React.JSX.Element {
 	return (
 		<li className="item">
 			<label>
-				<input type="checkbox"></input>
+				<input type="checkbox" checked={packed}></input>
 				{item}
 			</label>
 			<button>❌</button>

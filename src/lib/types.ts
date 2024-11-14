@@ -9,5 +9,15 @@ export type ItemListProps = {
 };
 
 export type SidebarProps = {
-  handleAddItem: (newItemText: string) => void;
+  handleAddItem?: (newItemText: string) => void;
+  handleRemoveAllItems?: () => void;
+  handleResetToInitial?: () => void;
+  handleMarkAllComplete?: () => void;
+  handleMarkAllIncomplete?: () => void;
+};
+
+export type ButtonProps = {
+  children: React.ReactNode;
+  buttonStyle?: string;
+  onClick?: () => void;
 };
