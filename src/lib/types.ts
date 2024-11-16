@@ -1,11 +1,21 @@
+import { MouseEventHandler } from "react";
+
 export type ItemsType = {
-  id?: number;
+  id: number;
   item: string;
-  packed?: boolean;
+  packed: boolean;
+};
+
+export type ItemElementProps = {
+  item: string;
+  id: number;
+  packed: boolean;
+  handleDeleteItem?: MouseEventHandler<HTMLButtonElement>;
 };
 
 export type ItemListProps = {
   items: ItemsType[];
+  handleDeleteItem: (id: number) => void;
 };
 
 export type SidebarProps = {
