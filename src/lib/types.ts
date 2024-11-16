@@ -11,11 +11,13 @@ export type ItemElementProps = {
   id: number;
   packed: boolean;
   handleDeleteItem?: MouseEventHandler<HTMLButtonElement>;
+  handleToggleItem?: MouseEventHandler<HTMLButtonElement>;
 };
 
 export type ItemListProps = {
   items: ItemsType[];
   handleDeleteItem: (id: number) => void;
+  handleToggleItem: (id: number) => void;
 };
 
 export type SidebarProps = {

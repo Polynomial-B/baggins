@@ -1,11 +1,14 @@
 import { ItemElementProps, ItemListProps } from "../lib/types";
+import EmptyList from "./EmptyList";
 
 export default function ItemList({
 	items,
 	handleDeleteItem,
+	handleToggleItem,
 }: ItemListProps): React.JSX.Element {
 	return (
-		<ul>
+		<ul className="item-list">
+			{items.length === 0 ? <EmptyList /> : null}
 			{items.map((item) => {
 				return (
 					<Item
@@ -14,6 +17,7 @@ export default function ItemList({
 						item={item.item}
 						packed={item.packed}
 						handleDeleteItem={handleDeleteItem}
+						handleToggleItem={handleToggleItem}
 					/>
 				);
 			})}
@@ -26,11 +30,16 @@ function Item({
 	id,
 	packed,
 	handleDeleteItem,
+	handleToggleItem,
 }: ItemElementProps): React.JSX.Element {
 	return (
 		<li className="item">
 			<label>
-				<input type="checkbox" checked={packed}></input>
+				<input
+					onClick={() => handleToggleItem(id)}
+					type="checkbox"
+					checked={packed}
+				></input>
 				{item}
 			</label>
 			<button onClick={() => handleDeleteItem(id)}>❌</button>
