@@ -41,7 +41,6 @@ function App() {
 		});
 		setItems(newItems);
 	};
-	console.log(items);
 	return (
 		<>
 			<BackgroundHeader />
