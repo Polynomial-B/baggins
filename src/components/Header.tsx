@@ -1,11 +1,16 @@
 import Counter from "./Counter";
 import Logo from "./Logo";
 
-export default function Header(): React.JSX.Element {
+export default function Header({
+	counterTotal,
+	completed,
+}: {
+	counterTotal: number;
+}): React.JSX.Element {
 	return (
 		<header>
 			<Logo />
-			<Counter />
+			<Counter counterTotal={counterTotal} completed={completed} />
 		</header>
 	);
 }

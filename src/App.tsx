@@ -50,11 +50,20 @@ function App() {
 		});
 		setItems(newItems);
 	};
+	const counterTotal = () => {
+		const amount = items.length;
+		return amount;
+	};
+	const completed = () => {
+		const amount = items.filter((item) => item.packed === true).length;
+		return amount;
+	};
+	completed();
 	return (
 		<>
 			<BackgroundHeader />
 			<main>
-				<Header />
+				<Header counterTotal={counterTotal} completed={completed} />
 				<ItemList
 					items={items}
 					handleDeleteItem={handleDeleteItem}

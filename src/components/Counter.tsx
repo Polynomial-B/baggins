@@ -1,7 +1,10 @@
-export default function Counter() {
+import { CounterProps } from "../lib/types";
+
+export default function Counter({ counterTotal, completed }: CounterProps) {
 	return (
 		<p>
-			<b>1</b> / 3 items packed
+			<b>{completed()}</b> / {counterTotal()} item
+			{counterTotal() > 1 ? "s" : ""} packed
 		</p>
 	);
 }

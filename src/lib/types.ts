@@ -33,3 +33,7 @@ export type ButtonProps = {
   buttonStyle?: string;
   onClick?: () => void;
 };
+export type CounterProps = {
+  counterTotal: () => number;
+  completed: () => number;
+};
