@@ -1,12 +1,11 @@
+import { CounterProps } from "../lib/types";
 import Counter from "./Counter";
 import Logo from "./Logo";
 
 export default function Header({
 	counterTotal,
 	completed,
-}: {
-	counterTotal: number;
-}): React.JSX.Element {
+}: CounterProps): React.JSX.Element {
 	return (
 		<header>
 			<Logo />

@@ -1,4 +1,4 @@
-import { ItemsType } from "./types";
+import { ItemsType, SortingOptionsType } from "./types";
 
 export const initialItems: ItemsType[] = [
   {
@@ -15,5 +15,20 @@ export const initialItems: ItemsType[] = [
     id: 3,
     item: "A woollen blanket",
     packed: false,
+  },
+];
+
+export const sortingOptions: SortingOptionsType[] = [
+  {
+    label: "Sort by default",
+    value: "default",
+  },
+  {
+    label: "Sort by completed",
+    value: "completed",
+  },
+  {
+    label: "Sort by incomplete",
+    value: "incomplete",
   },
 ];

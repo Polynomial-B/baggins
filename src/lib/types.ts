@@ -1,4 +1,4 @@
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, SetStateAction } from "react";
 
 export type ItemsType = {
   id: number;
@@ -37,3 +37,10 @@ export type CounterProps = {
   counterTotal: () => number;
   completed: () => number;
 };
+
+export type SortingOptionsType = {
+  label: string;
+  value: SetStateAction<SortType>;
+};
+
+export type SortType = "default" | "packed" | "unpacked";
