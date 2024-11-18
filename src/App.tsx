@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BackgroundHeader from "./components/BackgroundHeader";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -7,9 +7,17 @@ import Sidebar from "./components/Sidebar";
 import { initialItems } from "./lib/constants";
 import "./index.css";
 import { ItemsType } from "./lib/types";
+import { tryGetLocalStorageItems } from "./lib/helpers";
 
 function App() {
-	const [items, setItems] = useState(initialItems);
+	const [items, setItems] = useState(() =>
+		tryGetLocalStorageItems("items", initialItems)
+	);
+
+	useEffect(() => {
+		localStorage.setItem("items", JSON.stringify(items));
+	}, [items]);
+
 	const handleAddItem = (newItemText: string): void => {
 		const newItem: ItemsType = {
 			id: Date.now(),

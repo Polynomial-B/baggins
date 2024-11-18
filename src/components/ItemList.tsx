@@ -73,13 +73,13 @@ function Item({
 		<li className="item">
 			<label>
 				<input
-					onChange={() => handleToggleItem?.(id)}
+					onChange={() => handleToggleItem(id)}
 					type="checkbox"
 					checked={packed}
 				></input>
 				{item}
 			</label>
-			<button onChange={() => handleDeleteItem?.(id)}>❌</button>
+			<button onChange={() => handleDeleteItem(id)}>❌</button>
 		</li>
 	);
 }

@@ -1,4 +1,4 @@
-import { MouseEventHandler, SetStateAction } from "react";
+import { SetStateAction } from "react";
 
 export type ItemsType = {
   id: number;
@@ -10,8 +10,8 @@ export type ItemElementProps = {
   item: string;
   id: number;
   packed: boolean;
-  handleDeleteItem?: MouseEventHandler<HTMLButtonElement>;
-  handleToggleItem?: MouseEventHandler<HTMLButtonElement>;
+  handleDeleteItem: (id: number) => void;
+  handleToggleItem: (id: number) => void;
 };
 
 export type ItemListProps = {
