@@ -29,6 +29,7 @@ function App() {
 	};
 	const handleDeleteItem = (id: number) => {
 		const newItems = items.filter((item) => item.id !== id);
+		console.log(newItems);
 		setItems(newItems);
 	};
 	const handleToggleItem = (id: number) => {

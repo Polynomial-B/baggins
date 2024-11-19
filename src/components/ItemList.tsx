@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { sortingOptions } from "../lib/constants";
 import {
 	ItemElementProps,
@@ -17,15 +17,19 @@ export default function ItemList({
 }: ItemListProps): React.JSX.Element {
 	const [sort, setSort] = useState<SortType>("default");
 
-	const sortedItems: ItemsType[] = [...items].sort((a, b) => {
-		if (sort === "packed") {
-			return Number(b.packed) - Number(a.packed);
-		}
-		if (sort === "unpacked") {
-			return Number(a.packed) - Number(b.packed);
-		}
-		return 0;
-	});
+	const sortedItems: ItemsType[] = useMemo(
+		() =>
+			[...items].sort((a, b) => {
+				if (sort === "packed") {
+					return Number(b.packed) - Number(a.packed);
+				}
+				if (sort === "unpacked") {
+					return Number(a.packed) - Number(b.packed);
+				}
+				return 0;
+			}),
+		[items, sort]
+	);
 
 	const handleSortChange = (sortingOption: SortingOptionsType | null) => {
 		if (sortingOption?.value) {
