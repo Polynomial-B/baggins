@@ -21,7 +21,7 @@ export type ItemListProps = {
 };
 
 export type SidebarProps = {
-  handleAddItem?: (newItemText: string) => void;
+  onAddItem?: (newItemText: string) => void;
   handleRemoveAllItems?: () => void;
   handleResetToInitial?: () => void;
   handleMarkAllComplete?: () => void;

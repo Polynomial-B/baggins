@@ -2,20 +2,19 @@ import { useMemo, useState } from "react";
 import { sortingOptions } from "../lib/constants";
 import {
 	ItemElementProps,
-	ItemListProps,
 	ItemsType,
 	SortingOptionsType,
 	SortType,
 } from "../lib/types";
 import EmptyList from "./EmptyList";
 import Select from "react-select";
+import { useItemsStore } from "./stores/itemsStore";
 
-export default function ItemList({
-	items,
-	handleDeleteItem,
-	handleToggleItem,
-}: ItemListProps): React.JSX.Element {
+export default function ItemList(): React.JSX.Element {
 	const [sort, setSort] = useState<SortType>("default");
+	const items = useItemsStore((state) => state.items);
+	const deleteItem = useItemsStore((state) => state.deleteItem);
+	const toggleItem = useItemsStore((state) => state.toggleItem);
 
 	const sortedItems: ItemsType[] = useMemo(
 		() =>
@@ -57,8 +56,8 @@ export default function ItemList({
 						id={item.id}
 						item={item.item}
 						packed={item.packed}
-						handleDeleteItem={handleDeleteItem}
-						handleToggleItem={handleToggleItem}
+						handleDeleteItem={deleteItem}
+						handleToggleItem={toggleItem}
 					/>
 				);
 			})}

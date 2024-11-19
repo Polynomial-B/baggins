@@ -1,28 +1,28 @@
 import Button from "./Button";
-import { SidebarProps } from "../lib/types";
+import { useItemsStore } from "./stores/itemsStore";
 
-export default function ButtonGroup({
-	handleRemoveAllItems,
-	handleResetToInitial,
-	handleMarkAllComplete,
-	handleMarkAllIncomplete,
-}: SidebarProps) {
+export default function ButtonGroup() {
+	const markAllComplete = useItemsStore((state) => state.markAllComplete);
+	const markAllIncomplete = useItemsStore((state) => state.markAllIncomplete);
+	const resetToInitial = useItemsStore((state) => state.resetToInitial);
+	const removeAllItems = useItemsStore((state) => state.removeAllItems);
+
 	const secondaryButtons = [
 		{
 			text: "Mark all as complete",
-			function: handleMarkAllComplete,
+			function: markAllComplete,
 		},
 		{
 			text: "Mark all as incomplete",
-			function: handleMarkAllIncomplete,
+			function: markAllIncomplete,
 		},
 		{
 			text: "Reset to initial",
-			function: handleResetToInitial,
+			function: resetToInitial,
 		},
 		{
 			text: "Remove all items",
-			function: handleRemoveAllItems,
+			function: removeAllItems,
 		},
 	];
 	return (

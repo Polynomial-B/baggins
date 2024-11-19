@@ -1,23 +1,13 @@
 import AddItemForm from "./AddItemForm";
 import ButtonGroup from "./ButtonGroup";
-import { SidebarProps } from "../lib/types";
+import { useItemsStore } from "./stores/itemsStore";
 
-export default function Sidebar({
-	handleAddItem,
-	handleRemoveAllItems,
-	handleResetToInitial,
-	handleMarkAllComplete,
-	handleMarkAllIncomplete,
-}: SidebarProps): React.JSX.Element {
+export default function Sidebar(): React.JSX.Element {
+	const addItem = useItemsStore((state) => state.addItem);
 	return (
 		<div className="sidebar">
-			<AddItemForm handleAddItem={handleAddItem} />
-			<ButtonGroup
-				handleRemoveAllItems={handleRemoveAllItems}
-				handleResetToInitial={handleResetToInitial}
-				handleMarkAllComplete={handleMarkAllComplete}
-				handleMarkAllIncomplete={handleMarkAllIncomplete}
-			/>
+			<AddItemForm onAddItem={addItem} />
+			<ButtonGroup />
 		</div>
 	);
 }

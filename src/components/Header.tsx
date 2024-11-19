@@ -1,15 +1,16 @@
-import { CounterProps } from "../lib/types";
 import Counter from "./Counter";
 import Logo from "./Logo";
+import { useItemsStore } from "./stores/itemsStore";
 
-export default function Header({
-	counterTotal,
-	completed,
-}: CounterProps): React.JSX.Element {
+export default function Header(): React.JSX.Element {
+	const items = useItemsStore((state) => state.items);
 	return (
 		<header>
 			<Logo />
-			<Counter counterTotal={counterTotal} completed={completed} />
+			<Counter
+				completed={items.filter((item) => item.packed).length}
+				counterTotal={items.length}
+			/>
 		</header>
 	);
 }
