@@ -1,6 +1,10 @@
 ## Goal
 
-To create an app that allows a user to create and update a list, in order to aid packing bags for a holiday or for using as a shopping list / to do list. This will be created as a front-end app, using TypeScript and React.js with storage managed using Zustand.
+To create an app that allows a user to create and update a to do list. Created using TypeScript and React.js using local storage with Zustand for shared state management.
+
+## Screenshots
+
+![](src/assets/screenshot-1.png)
 
 ## Technologies and Dependencies
 
@@ -20,3 +24,4 @@ To create an app that allows a user to create and update a list, in order to aid
 - Git
 - Github
 - Chrome DevTools
+
