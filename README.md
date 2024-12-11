@@ -11,7 +11,7 @@ In order to save details to local storage and make use of Zustand for shared sta
 ``` JavaScript
 addItem: (newItemText: string) => {
         const newItem: ItemsType = {
-          id: Date.now(),
+          id: Date.now(), // ! Future action
           item: newItemText,
           packed: false,
         };
@@ -32,6 +32,12 @@ This could then be easily added where necessary in the app, for example, when an
 1. Import the function: `const deleteItem = useItemsStore((state) => state.deleteItem)`
 2. Apply it to each mapped item and delete using the item's id: `<button onChange={() => handleDeleteItem(id)}> ... `
 
+Using Zustand was an interesting way of solving the issue of useContext re-rendering everything when one element updated. I'll definitely be using it again for this purpose.
+
+## Future Improvements
+
+### ID
+For each item, the ID is currently created using the `Date.now()` class which could potentially produce duplicate keys. I could improve this system by adding something to make the identifier more unique, for example concatenating the unix date with the item name.
 
 ## Screenshots
 
