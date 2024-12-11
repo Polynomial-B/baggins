@@ -17,15 +17,17 @@ export const useItemsStore = create(
           return { items: [...state.items, newItem] };
         });
       },
-      deleteItem: (id) => {
+      deleteItem: (id: number) => {
         set((state) => {
-          const newItems = state.items.filter((item) => item.id !== id);
+          const newItems = state.items.filter(
+            (item: ItemsType) => item.id !== id
+          );
           return { items: newItems };
         });
       },
       toggleItem: (id: number) => {
-        set((state) => {
-          const newItems = state.items.map((item) => {
+        set((state: (id: number) => void) => {
+          const newItems = state.items.map((item: ItemsType) => {
             if (item.id === id) {
               return { ...item, packed: !item.packed };
             }
